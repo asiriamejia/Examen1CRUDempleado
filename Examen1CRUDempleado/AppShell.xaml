@@ -1,0 +1,20 @@
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Examen1CRUDempleado.Views"
+       x:Class="Examen1CRUDempleado.AppShell"
+       Shell.FlyoutBehavior="Disabled"
+       Title="Examen1CRUDempleado"
+       
+       Shell.BackgroundColor="#7B1FA2"
+       Shell.ForegroundColor="White"
+       Shell.TitleColor="White"
+       Shell.DisabledColor="#9E9E9E"
+       Shell.UnselectedColor="White">
+
+    <!-- Contenido de la aplicación -->
+    <ShellContent
+        Title="Empleados"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+</Shell>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen1CRUDempleado.Views.EmpleadoFormPage"
+             Title="Detalle de Empleado"
+             BackgroundColor="#F3E5F5">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Formulario de Empleado"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#4A148C"
+                   HorizontalOptions="Center" />
+
+            <Border BackgroundColor="White" Stroke="#CE93D8" StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Padding="15" Spacing="10">
+
+                    <Label Text="ID del Empleado:" TextColor="#6A1B9A" FontSize="12"/>
+                    <Entry x:Name="TxtId" IsEnabled="False" TextColor="Gray" BackgroundColor="#F5F5F5"/>
+
+                    <Label Text="Nombres:" TextColor="#6A1B9A" FontSize="12"/>
+                    <Entry x:Name="TxtNombres" Placeholder="Nombres (Obligatorio)" PlaceholderColor="#9E9E9E" TextColor="Black"/>
+
+                    <Label Text="Apellidos:" TextColor="#6A1B9A" FontSize="12"/>
+                    <Entry x:Name="TxtApellidos" Placeholder="Apellidos (Obligatorio)" PlaceholderColor="#9E9E9E" TextColor="Black"/>
+
+                    <Label Text="Puesto:" TextColor="#6A1B9A" FontSize="12"/>
+                    <Entry x:Name="TxtPuesto" Placeholder="Puesto (Obligatorio)" PlaceholderColor="#9E9E9E" TextColor="Black"/>
+
+                    <Label Text="Salario:" TextColor="#6A1B9A" FontSize="12"/>
+                    <Entry x:Name="TxtSalario" Placeholder="Mayor que cero" Keyboard="Numeric" PlaceholderColor="#9E9E9E" TextColor="Black"/>
+
+                    <Label Text="Correo Electrónico:" TextColor="#6A1B9A" FontSize="12"/>
+                    <Entry x:Name="TxtCorreo" Placeholder="ejemplo@correo.com" Keyboard="Email" PlaceholderColor="#9E9E9E" TextColor="Black"/>
+
+                    <Label Text="Fecha de Ingreso:" TextColor="#6A1B9A" FontSize="12"/>
+                    <DatePicker x:Name="DpFechaIngreso" TextColor="Black"/>
+
+                    <!-- Botones de Acción -->
+                    <VerticalStackLayout Spacing="10" Margin="0,15,0,0">
+                        <Button x:Name="BtnGuardar" 
+                                Text="Guardar Empleado" 
+                                BackgroundColor="#7B1FA2" 
+                                TextColor="White" 
+                                CornerRadius="8"
+                                Clicked="OnGuardarClicked"/>
+
+                        <Button Text="Cancelar" 
+                                BackgroundColor="#9E9E9E" 
+                                TextColor="White" 
+                                CornerRadius="8"
+                                Clicked="OnCancelarClicked"/>
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen1CRUDempleado.Views.MainPage"
+             Title="Lista de Empleados"
+             BackgroundColor="#F3E5F5">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <!-- Título -->
+        <Label Text="Mostrar Registro"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="#4A148C"
+               HorizontalOptions="Center" />
+
+        <!-- Botón para Agregar Nuevo -->
+        <Button Text="+ Agregar Nuevo Empleado"
+                BackgroundColor="#7B1FA2"
+                TextColor="White"
+                CornerRadius="8"
+                Clicked="OnAgregarClicked" />
+
+        <!-- Listado en ListView -->
+        <Label Text="Empleados Registrados" FontSize="18" FontAttributes="Bold" TextColor="#4A148C" />
+
+        <ListView x:Name="LvEmpleados" 
+                  ItemSelected="OnEmpleadoSelected"
+                  HeightRequest="400"
+                  BackgroundColor="Transparent"
+                  SeparatorColor="#CE93D8">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Border Margin="0,5" BackgroundColor="White" Stroke="#E1BEE7" StrokeThickness="1">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="5"/>
+                            </Border.StrokeShape>
+
+        <Grid Padding="10" ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto">
+                                <Label Grid.Row="0" Grid.Column="0" 
+                                       Text="{Binding Nombres}" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#4A148C" 
+                                       FontSize="16"/>
+                                <Label Grid.Row="1" Grid.Column="0" 
+                                       Text="{Binding Puesto}" 
+                                       TextColor="#7B1FA2" 
+                                       FontSize="14"/>
+                                <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" 
+                                       Text="{Binding Salario, StringFormat='l{0:N2}'}" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#2E7D32" 
+                                       VerticalTextAlignment="Center" 
+                                       FontSize="15"/>
+                            </Grid>
+                        </Border>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </VerticalStackLayout>
+</ContentPage>
